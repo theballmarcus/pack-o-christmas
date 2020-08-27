@@ -6,7 +6,9 @@ var debug = require('debug')('server:server');
 var http = require('http');
 
 // Get port from env variable or just use 3000
-var port = normalizePort(process.env.PORT || '3000');
+//var port = normalizePort(process.env.PORT || '3000');
+var port = app.port;
+
 
 app.set('port', port);
 
