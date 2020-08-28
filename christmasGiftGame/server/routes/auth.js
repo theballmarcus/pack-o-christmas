@@ -5,14 +5,6 @@ var session = require('express-session');
 var connection = require('../mysql.js')
 
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.render('login', {
-    title: "Christmas random game"
-  });
-});
-
-
 router.post('/', function(request, response) {
 	var username = request.body.username;
 	var password = request.body.password;
@@ -32,5 +24,6 @@ router.post('/', function(request, response) {
 		response.end();
 	}
 });
+
 
 module.exports = router;
