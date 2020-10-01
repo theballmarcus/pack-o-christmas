@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var mysql = require('mysql')
 var session = require('express-session');
-var connection = require('../mysql.js')
+var connection = require('../postgres.js')
+//var connection = require('../mysql.js')
 
 
 /* GET users listing. */
@@ -18,7 +18,7 @@ router.post('/', function(request, response) {
 	var password = request.body.password;
 	if (username && password) {
 		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
-			if (results.length > 0) {
+			if (!error) {
 				request.session.loggedin = true;
 				request.session.username = username;
 				response.redirect('/home');

@@ -1,0 +1,38 @@
+version: '2'
+services:
+    database:
+        image: postgres
+        environment: 
+            - POSTGRES_PASSWORD=root
+            - POSTGRES_USER=mci
+            - PGADMIN_DEFAULT_EMAIL=mcihme@gmail.com
+            - PGADMIN_DEFAULT_PASSWORD=root
+        volumes:
+            - data-volume:/var/lib/postgresql/data
+#            - /home/marcus/backups/db:/var/lib/postgresql/data
+    dbadmin:
+        image: dpage/pgadmin4
+        environment: 
+            - PGADMIN_DEFAULT_EMAIL=mcihme@gmail.com
+            - PGADMIN_DEFAULT_PASSWORD=root
+            - PGADMIN_LISTEN_PORT=29292
+        ports:
+            - "29292:29292"
+    web:
+        build: 
+            context: 'server'
+            dockerfile: Dockerfile
+        #image: nodeserver
+        command: npm start
+        volumes:
+            - .:/usr/app/
+            - /usr/app/node_modules
+        ports: 
+            - "80:80"
+        depends_on: 
+            - database
+        environment: 
+            - DATABASE=localhost
+
+volumes:
+    data-volume:

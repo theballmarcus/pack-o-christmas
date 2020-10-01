@@ -2,7 +2,6 @@
 
 //VARIABLE DEFINEMENT AND REQUIREMENTS
 var app = require('../server');
-var debug = require('debug')('server:server');
 var http = require('http');
 
 // Get port from env variable or just use 3000
@@ -79,5 +78,5 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  console.log('Listening on ' + bind);
 }

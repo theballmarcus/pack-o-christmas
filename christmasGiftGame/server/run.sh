@@ -1,1 +1,1 @@
-DEBUG=server:* nodemon start
+nodemon start

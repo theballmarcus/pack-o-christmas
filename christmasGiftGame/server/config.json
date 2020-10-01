@@ -1,7 +1,8 @@
 {
-    "nodeloginPasswd" : "Az2a9yzP6VrmMF0P0oQJLwzx",
-    "nodeloginHost" : "localhost",
-    "nodeloginUser" : "nodeUser",
-    "nodeloginDatabase" : "nodelogin",
-    "serverPort" : 29292
+    "serverPort" : 80,
+    "nodeloginPasswd" : "root",
+    "nodeloginHost" : "database",
+    "nodeloginUser" : "mci",
+    "nodeloginDatabase" : "mci",
+    "nodeloginPort" : 5432
 }

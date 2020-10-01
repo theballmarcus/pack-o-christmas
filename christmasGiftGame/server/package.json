@@ -14,10 +14,9 @@
     "express-session": "^1.17.1",
     "express-sessions": "^1.0.6",
     "http-errors": "~1.6.3",
-    "jade": "^1.11.0",
     "morgan": "^1.9.1",
-    "mysql": "^2.18.1",
     "nodemon": "^2.0.4",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "pg": "^8.3.3"
   }
 }
